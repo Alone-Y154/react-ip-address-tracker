@@ -1,0 +1,13 @@
+# for development env
+
+FROM node:alpine3.10
+
+WORKDIR /ip-address-tracker
+
+COPY ./package.json /ip-address-tracker
+
+RUN npm install
+
+COPY . /ip-address-tracker
+
+CMD [ "npm","start" ]
